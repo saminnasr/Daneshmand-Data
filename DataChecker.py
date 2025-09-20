@@ -22,10 +22,10 @@ worksheet = spreadsheet.worksheet("Final edition DOCs")
 data = worksheet.get_all_records()
 df = pd.DataFrame(data)
 
-st.title("Khash2 3MW Solar Power Plant")
+st.title("amanAbad 3MW Solar Power Plant")
 
 # --- Format values ---
-st.subheader("📋 Status of All Sites")
+st.subheader("📋 List of Data Provided by Daneshmand")
 def format_value(val):
     if pd.isna(val) or str(val).strip() == "":
         return "❌ Not Available"
