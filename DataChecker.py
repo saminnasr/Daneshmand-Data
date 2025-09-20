@@ -84,9 +84,10 @@ st.markdown(scrollable_table, unsafe_allow_html=True)
 # --- Quick Query ---
 st.subheader("🔎 Quick Query")
 site_col = df.columns[0]
-site_choice = st.selectbox("Choose a site for quick check:", df[site_col].unique())
-field = st.selectbox("Which data do you want to check?", df.columns[1:])
-result = df[df[site_col] == site_choice][field].iloc[0]
+site_choice = st.selectbox("Choose a document for quick check:", df[site_col].unique())
+st.subheader("When it was sent")
+
+result = df[df[site_col] == site_choice].iloc[4]
 
 if pd.isna(result) or str(result).strip() == "":
     st.error(f"❌ {field} for {site_choice} is NOT available.")
