@@ -97,9 +97,9 @@ date_value = row[date_col]
 link_value = row[link_col]
 
 if pd.isna(date_value) or str(date_value).strip() == "":
-    st.error(f"❌ Date for {site_choice} is NOT available.")
+    st.error(f"❌ Date of Recieved for {site_choice} is NOT available.")
 else:
-    st.success(f"✅ Date for {site_choice}: {date_value}")
+    st.success(f"✅ Date of Recieved for {site_choice} is: {date_value}")
 
     if pd.isna(link_value) or str(link_value).strip() == "":
         st.warning("⚠️ Download link not available.")
