@@ -86,8 +86,8 @@ st.subheader("🔎 Quick Query")
 
 
 site_col = df.columns[0]
-link_col = df.columns[1]
-date_col = df.columns[2]
+link_col = df.columns[2]
+date_col = df.columns[3]
 
 site_choice = st.selectbox("Choose a document for quick check:", df[site_col].unique())
 st.subheader("When it was sent")
