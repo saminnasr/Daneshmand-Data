@@ -83,13 +83,26 @@ st.markdown(scrollable_table, unsafe_allow_html=True)
 
 # --- Quick Query ---
 st.subheader("🔎 Quick Query")
+
+
 site_col = df.columns[0]
+link_col = df.columns[2]
+date_col = df.columns[3]
+
 site_choice = st.selectbox("Choose a document for quick check:", df[site_col].unique())
 st.subheader("When it was sent")
 
-result = df[df[site_col] == site_choice].iloc[4]
+row = df[df[site_col] == site_choice].iloc[0]
+date_value = row[date_col]
+link_value = row[link_col]
 
-if pd.isna(result) or str(result).strip() == "":
-    st.error(f"❌ {field} for {site_choice} is NOT available.")
+if pd.isna(date_value) or str(date_value).strip() == "":
+    st.error(f"❌ Date for {site_choice} is NOT available.")
 else:
-    st.success(f"✅ {field} for {site_choice} is available ({result})")
+    st.success(f"✅ Date for {site_choice}: {date_value}")
+
+    if pd.isna(link_value) or str(link_value).strip() == "":
+        st.warning("⚠️ Download link not available.")
+    else:
+        st.markdown(f"[📥 Download File]({link_value})", unsafe_allow_html=True)
+
