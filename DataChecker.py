@@ -90,7 +90,7 @@ link_col = df.columns[2]
 date_col = df.columns[3]
 
 site_choice = st.selectbox("Choose a document for quick check:", df[site_col].unique())
-st.subheader("When it was sent")
+st.subheader("When it was sent?")
 
 row = df[df[site_col] == site_choice].iloc[0]
 date_value = row[date_col]
