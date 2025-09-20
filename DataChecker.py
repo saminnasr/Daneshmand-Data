@@ -45,7 +45,7 @@ def format_value(val):
     elif val.startswith("http"):
         return f'<a href="{val}" target="_blank">🔗 Document</a>'
     else:
-        return f"✅ Available ({val})"
+        return f"({val})"
 
 formatted_df = df.copy()
 for col in formatted_df.columns[1:]:
