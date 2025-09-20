@@ -17,7 +17,7 @@ creds = Credentials.from_service_account_info(
 client = gspread.authorize(creds)
 
 # --- Open Spreadsheet ---
-spreadsheet = client.open("Khash2 3MW Solar Power Plant")
+spreadsheet = client.open("HajiAbad 3MW Solar Power Plant")
 worksheet = spreadsheet.worksheet("Final edition DOCs") 
 data = worksheet.get_all_records()
 df = pd.DataFrame(data)
